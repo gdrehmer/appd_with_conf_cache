@@ -8,7 +8,8 @@ pluginManagement {
     resolutionStrategy {
         eachPlugin {
             when (requested.id.id) {
-                "adeum" -> useModule("com.appdynamics:appdynamics-gradle-plugin:23.7.1")
+                "adeum" -> useModule("com.appdynamics:appdynamics-gradle-plugin:22.8.0")
+//                "adeum" -> useModule("com.appdynamics:appdynamics-gradle-plugin:23.7.1")
             }
         }
     }

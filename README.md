@@ -1,3 +1,25 @@
+# BRANCH SPECIAL NOTE
+
+This branch is a modification from `main` branch, trying to downgrade AppD version to version 22.8.0,
+as suggested workaround. 
+
+Downgrading from version 23.* without downgrading Gradle 8 **is not possible**.
+The version 22.*.- of the library is not compatible with Gradle 8, as per stacktrace from running
+`./gradlew clean assembleDebug`:
+
+
+```
+* What went wrong:
+An exception occurred applying plugin request [id: 'adeum', version: '22.8.0', artifact: 'com.appdynamics:appdynamics-gradle-plugin:22.8.0']
+> Failed to apply plugin 'adeum'.
+   > API 'android.registerTransform' is removed.
+     
+     For more information, see https://developer.android.com/studio/releases/gradle-plugin-api-updates#transform-api.
+     To determine what is calling android.registerTransform, use -Pandroid.debug.obsoleteApi=true on the command line to display more information.
+
+```
+
+
 # Context
 
 Gradle has a build configuration cache capability, which is still not enabled by default. Information can be found at https://docs.gradle.org/current/userguide/configuration_cache.html
